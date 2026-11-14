@@ -1,0 +1,1 @@
+module.exports={evalExpr:s=>{let i=0,e=()=>{let v=t();while(s[i]=='+'||s[i]=='-')v=s[i++]=='+'?v+t():v-t();return v},t=()=>{let v=f();while(s[i]=='*'||s[i]=='/')v=s[i++]=='*'?v*f():v/f();return v},f=()=>{if(s[i]=='('){i++;let v=e();i++;return v}if(s[i]=='-'){i++;return-f()}let j=i;while(/[0-9.]/.test(s[i]||''))i++;return+s.slice(j,i)};return e()}}
